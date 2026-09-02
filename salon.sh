@@ -21,7 +21,7 @@ MAIN_MENU() {
 
   if [[ -z $SERVICE_CHECK ]]
   then
-    echo -e "\nI could not find that service. What would you like to do?\n"
+    echo -e "\nI could not find that service. What would you like today?\n"
     MAIN_MENU
   else
     echo -e "\nWhat's your phone number?"
@@ -45,7 +45,7 @@ MAIN_MENU() {
 
     INSERT_APPOINTMENT_RESULT=$($PSQL "INSERT INTO appointments(customer_id, service_id, time) VALUES($CUSTOMER_ID, $SERVICE_ID_SELECTED, '$SERVICE_TIME')")
 
-    echo -e "\nI have put you down for a $SERVICE_NAME at $SERVICE_TIME, $CUSTOMER_NAME"
+    echo -e "\nI have put you down for a $SERVICE_NAME at $SERVICE_TIME, $CUSTOMER_NAME."
   fi
 }
 
